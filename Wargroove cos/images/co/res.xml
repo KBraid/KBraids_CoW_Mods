@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<resources>
+	<set path = "mods/Wargroove cos/images/co/" />
+	<atlas linearFilter="false">
+        <image file="cs/co_mercia+nrm.png" />
+        <image file="cs/co_mercia+info.png" />
+        <image file="cs/co_mercia+mini.png" />
+        <image file="cs/co_mercia+face.png" cols = "3" />
+        <image file="cs/co_emeric+nrm.png" />
+        <image file="cs/co_emeric+info.png" />
+        <image file="cs/co_emeric+mini.png" />
+        <image file="cs/co_emeric+face.png" cols = "3" />
+        <image file="cs/co_caesar+nrm.png" />
+        <image file="cs/co_caesar+info.png" />
+        <image file="cs/co_caesar+mini.png" />
+        <image file="cs/co_caesar+face.png" cols = "3" />
+        <image file="cs/co_mercival+nrm.png" />
+        <image file="cs/co_mercival+info.png" />
+        <image file="cs/co_mercival+mini.png" />
+        <image file="cs/co_mercival+face.png" cols = "3" />
+        <image file="cs/co_mercival+alt+nrm.png" />
+        <image file="cs/co_mercival+alt+info.png" />
+        <image file="cs/co_mercival+alt+mini.png" />
+        <image file="cs/co_mercival+alt+face.png" cols = "3" />
+        
+        <image file="fh/co_ragna+nrm.png" />
+        <image file="fh/co_ragna+info.png" />
+        <image file="fh/co_ragna+mini.png" />
+        <image file="fh/co_ragna+face.png" cols = "3" />
+        <image file="fh/co_valder+nrm.png" />
+        <image file="fh/co_valder+info.png" />
+        <image file="fh/co_valder+mini.png" />
+        <image file="fh/co_valder+face.png" cols = "3" />
+        <image file="fh/co_sigrid+nrm.png" />
+        <image file="fh/co_sigrid+info.png" />
+        <image file="fh/co_sigrid+mini.png" />
+        <image file="fh/co_sigrid+face.png" cols = "3" />
+    </atlas>
+</resources>

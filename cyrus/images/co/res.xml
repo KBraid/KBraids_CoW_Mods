@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<resources>
+    <set path = "mods/cyrus/images/co/" />
+    <atlas linearFilter="false">
+        <image file="dm/co_cyrus+nrm.png" />
+        <image file="dm/co_cyrus+info.png" />
+        <image file="dm/co_cyrus+face.png" cols = "3" />
+    </atlas>
+</resources>

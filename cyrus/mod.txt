@@ -1,0 +1,8 @@
+name=Cyrus CO
+description=Adds Cyrus to the game as a Dark Matter CO
+version=1.0
+compatible_mods=
+incompatible_mods=
+required_mods=
+cosmetic=false
+tags=Advance Wars;COs

@@ -1,0 +1,8 @@
+name=Wargroove battle backgrounds
+description=
+version=1.0.0
+compatible_mods=
+incompatible_mods=
+required_mods=
+cosmetic=true
+tags=cosmetic

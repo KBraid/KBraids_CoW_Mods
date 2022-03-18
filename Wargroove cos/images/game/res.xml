@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<resources>
+	<set path = "mods/Wargroove cos/images/game/" />
+	<atlas linearFilter="false">
+		<image file="cs.png"/>
+		<image file="icon_cs.png"/>
+		<image file="fh.png"/>
+		<image file="icon_fh.png"/>
+		<image file="gw.png"/>
+		<image file="icon_gw.png"/>
+		<image file="hs.png"/>
+		<image file="icon_hs.png"/>
+		<image file="rq.png"/>
+		<image file="icon_rq.png"/>
+		<image file="ol.png"/>
+		<image file="icon_ol.png"/>
+    </atlas>
+</resources>

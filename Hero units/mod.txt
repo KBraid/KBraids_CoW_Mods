@@ -1,0 +1,8 @@
+name=Hero Unit
+description=Adds the an OP unit for predepoly map making
+version=1.0
+compatible_mods=
+incompatible_mods=
+required_mods=
+cosmetic=false
+tags=Units

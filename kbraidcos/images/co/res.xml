@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<resources>
+    <set path = "mods/kbraidcos/images/co/" />
+    <atlas linearFilter="false">
+        <image file="ai/co_braid+nrm.png" />
+        <image file="ai/co_braid+info.png" />
+        <image file="ai/co_braid+mini.png" />
+        <image file="ai/co_braid+face.png" cols = "3" />
+        <image file="ai/co_eili+nrm.png" />
+        <image file="ai/co_eili+info.png" />
+        <image file="ai/co_eili+mini.png" />
+        <image file="ai/co_eili+face.png" cols = "3" />
+
+        <image file="gs/co_danial+nrm.png" />
+        <image file="gs/co_danial+info.png" />
+        <image file="gs/co_danial+mini.png" />
+        <image file="gs/co_danial+face.png" cols = "3" />
+        <image file="gs/co_eva+nrm.png" />
+        <image file="gs/co_eva+info.png" />
+        <image file="gs/co_eva+mini.png" />
+        <image file="gs/co_eva+face.png" cols = "3" />
+    </atlas>
+</resources>

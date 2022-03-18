@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<resources>
+	<set path = "mods/kbraidcos/images/game/" />
+	<atlas linearFilter="false">
+		<image file="ai.png"/>
+		<image file="icon_ai.png"/>
+    </atlas>
+</resources>

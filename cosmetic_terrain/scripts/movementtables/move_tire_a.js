@@ -1,0 +1,7 @@
+MOVE_TIRE_A.movementpointsTable = (["SNOW", 2],
+                                ["SNOW_DESTROYEDWELD", 2],
+                                ["SNOW_FOREST", 3],
+                                ["SNOW_FOREST1", 3],
+                                ["SNOW_FOREST2", 3],
+                                ["SNOW_WASTELAND", 3],
+                                ["SNOW_RUIN", 2]);

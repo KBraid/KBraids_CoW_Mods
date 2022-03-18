@@ -1,0 +1,8 @@
+name=K'Braid's COs
+description=Adds the custom COs made by K'Braid
+version=1.0.3
+compatible_mods=
+incompatible_mods=
+required_mods=
+cosmetic=false
+tags=Advance Wars;COs
