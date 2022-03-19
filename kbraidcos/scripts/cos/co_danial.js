@@ -217,27 +217,17 @@ var Constructor = function()
 
     this.getFirstStrike = function(co, unit, posX, posY, attacker, isDefender, map)
     {
-        if(unit !== null)
-        {
-            switch (co.getPowerMode())
+        var variables = defender.getVariables();
+        var variable = variables.createVariable("CO_DANIAL"); // todo change co name to the actual name
+        var counter = variable.readDataInt32();
+        if (counter > 0)
             {
-            case GameEnums.PowerMode_Tagpower:
-            case GameEnums.PowerMode_Superpower:
-                if (isDefender)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            case GameEnums.PowerMode_Power:
-                return false;
-            default:
                 return false;
             }
-        }
-        return false;
+            else
+            {
+                return true;
+            }
     };
 
     this.postAction = function(co, action, map)
