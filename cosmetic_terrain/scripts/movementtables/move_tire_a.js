@@ -1,7 +1,16 @@
-MOVE_TIRE_A.movementpointsTable = (["SNOW", 2],
-                                ["SNOW_DESTROYEDWELD", 2],
-                                ["SNOW_FOREST", 3],
-                                ["SNOW_FOREST1", 3],
-                                ["SNOW_FOREST2", 3],
-                                ["SNOW_WASTELAND", 3],
-                                ["SNOW_RUIN", 2]);
+var idx = 0; //
+
+idx = getIndexOf1(MOVE_TIRE_A.movementpointsTable, "SNOW");
+MOVE_TIRE_A.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_TIRE_A.movementpointsTable, "SNOW_DESTROYEDWELD");
+MOVE_TIRE_A.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_TIRE_A.movementpointsTable, "SNOW_FOREST");
+MOVE_TIRE_A.movementpointsTable[idx][1] = 3;
+idx = getIndexOf1(MOVE_TIRE_A.movementpointsTable, "SNOW_FOREST1");
+MOVE_TIRE_A.movementpointsTable[idx][1] = 3;
+idx = getIndexOf1(MOVE_TIRE_A.movementpointsTable, "SNOSNOW_FOREST2");
+MOVE_TIRE_A.movementpointsTable[idx][1] = 3;
+idx = getIndexOf1(MOVE_TIRE_A.movementpointsTable, "SNOW_WASTELAND");
+MOVE_TIRE_A.movementpointsTable[idx][1] = 3;
+idx = getIndexOf1(MOVE_TIRE_A.movementpointsTable, "SNOW_RUIN");
+MOVE_TIRE_A.movementpointsTable[idx][1] = 2;

@@ -1,7 +1,16 @@
-MOVE_TANK.movementpointsTable = (["SNOW", 1],
-                                ["SNOW_DESTROYEDWELD", 1],
-                                ["SNOW_FOREST", 2],
-                                ["SNOW_FOREST1", 2],
-                                ["SNOW_FOREST2", 2],
-                                ["SNOW_WASTELAND", 2],
-                                ["SNOW_RUIN", 1]);
+var idx = 0; //
+
+idx = getIndexOf1(MOVE_TANK.movementpointsTable, "SNOW");
+MOVE_TANK.movementpointsTable[idx][1] = 1;
+idx = getIndexOf1(MOVE_TANK.movementpointsTable, "SNOW_DESTROYEDWELD");
+MOVE_TANK.movementpointsTable[idx][1] = 1;
+idx = getIndexOf1(MOVE_TANK.movementpointsTable, "SNOW_FOREST");
+MOVE_TANK.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_TANK.movementpointsTable, "SNOW_FOREST1");
+MOVE_TANK.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_TANK.movementpointsTable, "SNOSNOW_FOREST2");
+MOVE_TANK.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_TANK.movementpointsTable, "SNOW_WASTELAND");
+MOVE_TANK.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_TANK.movementpointsTable, "SNOW_RUIN");
+MOVE_TANK.movementpointsTable[idx][1] = 1;

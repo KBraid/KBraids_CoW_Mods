@@ -1,7 +1,16 @@
-MOVE_NEOTANK.movementpointsTable = (["SNOW", 1],
-                                ["SNOW_DESTROYEDWELD", 1],
-                                ["SNOW_FOREST", 2],
-                                ["SNOW_FOREST1", 2],
-                                ["SNOW_FOREST2", 2],
-                                ["SNOW_WASTELAND", 2],
-                                ["SNOW_RUIN", 1]);
+var idx = 0; //
+
+idx = getIndexOf1(MOVE_NEOTANK.movementpointsTable, "SNOW");
+MOVE_NEOTANK.movementpointsTable[idx][1] = 1;
+idx = getIndexOf1(MOVE_NEOTANK.movementpointsTable, "SNOW_DESTROYEDWELD");
+MOVE_NEOTANK.movementpointsTable[idx][1] = 1;
+idx = getIndexOf1(MOVE_NEOTANK.movementpointsTable, "SNOW_FOREST");
+MOVE_NEOTANK.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_NEOTANK.movementpointsTable, "SNOW_FOREST1");
+MOVE_NEOTANK.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_NEOTANK.movementpointsTable, "SNOSNOW_FOREST2");
+MOVE_NEOTANK.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_NEOTANK.movementpointsTable, "SNOW_WASTELAND");
+MOVE_NEOTANK.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_NEOTANK.movementpointsTable, "SNOW_RUIN");
+MOVE_NEOTANK.movementpointsTable[idx][1] = 1;

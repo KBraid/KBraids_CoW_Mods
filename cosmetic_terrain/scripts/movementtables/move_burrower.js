@@ -1,6 +1,16 @@
-MOVE_BURROWER.movementpointsTable = (["SNOW", 1],
-                                ["SNOW_DESTROYEDWELD", 1],
-                                ["SNOW_FOREST", 2],
-                                ["SNOW_FOREST1", 2],
-                                ["SNOW_FOREST2", 2],
-                                ["SNOW_WASTELAND", 3]);
+var idx = 0; //
+
+idx = getIndexOf1(MOVE_BURROWER.movementpointsTable, "SNOW");
+MOVE_BURROWER.movementpointsTable[idx][1] = 1;
+idx = getIndexOf1(MOVE_BURROWER.movementpointsTable, "SNOW_DESTROYEDWELD");
+MOVE_BURROWER.movementpointsTable[idx][1] = 1;
+idx = getIndexOf1(MOVE_BURROWER.movementpointsTable, "SNOW_FOREST");
+MOVE_BURROWER.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_BURROWER.movementpointsTable, "SNOW_FOREST1");
+MOVE_BURROWER.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_BURROWER.movementpointsTable, "SNOSNOW_FOREST2");
+MOVE_BURROWER.movementpointsTable[idx][1] = 2;
+idx = getIndexOf1(MOVE_BURROWER.movementpointsTable, "SNOW_WASTELAND");
+MOVE_BURROWER.movementpointsTable[idx][1] = 3;
+idx = getIndexOf1(MOVE_BURROWER.movementpointsTable, "SNOW_RUIN");
+MOVE_BURROWER.movementpointsTable[idx][1] = 1;
