@@ -201,7 +201,7 @@ var Constructor = function()
             } 
         }       
         var variables = defender.getVariables();
-        var variable = variables.createVariable("CO_DANIAL"); // todo change co name to the actual name
+        var variable = variables.createVariable("CO_DANIAL"); 
         var counter = variable.readDataInt32();
         if (counter > 0)
         {
@@ -218,7 +218,7 @@ var Constructor = function()
     this.getFirstStrike = function(co, unit, posX, posY, attacker, isDefender, map)
     {
         var variables = defender.getVariables();
-        var variable = variables.createVariable("CO_DANIAL"); // todo change co name to the actual name
+        var variable = variables.createVariable("CO_DANIAL"); 
         var counter = variable.readDataInt32();
         if (counter > 0)
             {
@@ -237,7 +237,7 @@ var Constructor = function()
             action.getMovePathLength() > 1)
         {
             var variables = unit.getVariables();
-            var variable = variables.createVariable("CO_DANIAL"); // todo change co name to the actual name
+            var variable = variables.createVariable("CO_DANIAL"); 
             variable.writeDataInt32(1); // mark unit as has moved
         }
     };
@@ -252,7 +252,7 @@ var Constructor = function()
             {
                 var unit = units.at(i);
                 var variables = unit.getVariables();
-                var variable = variables.createVariable("CO_DANIAL"); // todo change co name to the actual name
+                var variable = variables.createVariable("CO_DANIAL"); 
                 variable.writeDataInt32(0); // reset unit has moved
             }
         }

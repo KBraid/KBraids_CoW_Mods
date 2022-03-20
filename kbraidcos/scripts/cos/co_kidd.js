@@ -144,18 +144,19 @@ var Constructor = function()
         {
             case GameEnums.PowerMode_Tagpower:
             case GameEnums.PowerMode_Superpower:
-                return 40;
+                return 60;
             case GameEnums.PowerMode_Power:
-                return 20;
+                return 40;
             default:
-        return 0;
+        return 20;
+        }
     };
     this.getDeffensiveBonus = function(co, attacker, atkPosX, atkPosY,
                                        defender, defPosX, defPosY, isAttacker, action, luckmode, map)
     {
-        return -10;
+        return -5;
     };
-    this.getFirerangeModifier = function(co, unit, posX, posY, map)
+    this.getMinFirerangeModifier = function(co, unit, posX, posY, map)
     {
         switch (co.getPowerMode())
         {
@@ -195,12 +196,7 @@ var Constructor = function()
                 {
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
-                if (co.inCORange(Qt.point(atkPosX, atkPosY), attacker))
-                if (isDefender)
+                else if (co.inCORange(Qt.point(atkPosX, atkPosY), attacker, isDefender))
                 {
                     return true;
                 }
@@ -239,7 +235,7 @@ var Constructor = function()
     };
     this.getLongCODescription = function()
     {
-        return qsTr("\nGlobal Effect: \nall units have +20 attack and -10 defense and deal extra damage against transports and trains (Cat units)") +
+        return qsTr("\nGlobal Effect: \nall units have +20 attack and -5 defense and deal extra damage against transports and trains (Cat units)") +
                qsTr("\n\nCO Zone Effect: \nall units attack first when counterattacking");
     };
     this.getPowerDescription = function(co)
