@@ -224,7 +224,7 @@ var Constructor = function()
     };
     this.getPowerName = function(co)
     {
-        return qsTr("Healing Aura");
+        return qsTr("Healing Field");
     };
     this.getSuperPowerDescription = function(co)
     {

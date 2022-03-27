@@ -214,7 +214,7 @@ var Constructor = function()
     };
     this.getPowerName = function(co)
     {
-        return qsTr("Vampiric Touch");
+        return qsTr("Bleeding Touch");
     };
     this.getSuperPowerDescription = function(co)
     {

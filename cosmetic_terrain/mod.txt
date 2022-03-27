@@ -1,6 +1,6 @@
 name=Cosmetic Terrain Mod
 description=This mod removes the terrain modifiers from snow, desert, and waste terrain types making them behave like plain terrain tiles. Used for maps that have varying terrain for cosmetic purposes.
-version=2.2.0
+version=2.2.2
 compatible_mods=
 incompatible_mods=
 required_mods=

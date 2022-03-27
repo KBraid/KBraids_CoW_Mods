@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<resources>
+        <set path = "mods/cowextraunits/images/battleanimations/" />
+	<atlas linearFilter="false">
+                <image file="atv+mask.png" />
+                <image file="atv+driver+mask.png" />
+	</atlas>
+</resources>

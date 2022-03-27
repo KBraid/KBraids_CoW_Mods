@@ -1,0 +1,7 @@
+name=Commander Wars Extra Units
+description=Adds new vanilla style units. Code by ChemAtDark, sprites by K'Braid.
+version=1.1.2
+compatible_mods=
+incompatible_mods=
+required_mods=
+cosmetic=false

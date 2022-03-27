@@ -138,7 +138,7 @@ var Constructor = function()
     };
     this.getPowerName = function(co)
     {
-        return qsTr("Raise Dead");
+        return qsTr("Stir Dead");
     };
     this.getSuperPowerDescription = function(co)
     {

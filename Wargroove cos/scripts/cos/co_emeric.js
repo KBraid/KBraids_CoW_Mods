@@ -183,7 +183,7 @@ var Constructor = function()
     };
     this.getPowerName = function(co)
     {
-        return qsTr("Elder Shield");
+        return qsTr("Cherry Shield");
     };
     this.getSuperPowerDescription = function(co)
     {

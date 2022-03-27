@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<resources>
+    <set path = "mods/aw_styled_units/images/units/" />
+    <atlas linearFilter="false">
+        <!-- icon -->
+    </atlas>
+</resources>

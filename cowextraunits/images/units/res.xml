@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<resources>
+        <set path = "mods/cowextraunits/images/units/" />
+	<atlas linearFilter="false">
+                <image file="atv+mask.png" cols = "4" />
+                <image file="atv+empty+mask.png" />
+                <image file="atv+walk+mask.png" cols = "3" rows = "4" />
+	</atlas>
+</resources>

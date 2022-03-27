@@ -1,0 +1,8 @@
+name=AW-Styled Units
+description=Changes the unit animations to match that of classic Advance Wars
+version=1.0.0
+compatible_mods=
+incompatible_mods=
+required_mods=
+cosmetic=true
+tags=Visual

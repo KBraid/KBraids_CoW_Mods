@@ -1,10 +1,5 @@
 var Constructor = function()
 {
-    this.getAiUsePower = function(co, powerSurplus, unitCount, repairUnits, indirectUnits, directUnits, enemyUnits, turnMode)
-    {
-        return CO.getAiUsePowerAtUnitCount(co, powerSurplus, turnMode, indirectUnits);
-    };
-
     this.init = function(co, map)
     {
         co.setPowerStars(4);
@@ -44,8 +39,6 @@ var Constructor = function()
         for (var i = 0; i < units.size(); i++)
         {
             var unit = units.at(i);
-            if (unit.getBaseMaxRange() > 1)
-            {
                 var animation = GameAnimationFactory.createAnimation(map, unit.getX(), unit.getY());
                 var delay = globals.randInt(135, 265);
                 if (animations.length < 5)
@@ -77,7 +70,6 @@ var Constructor = function()
                         counter = 0;
                     }
                 }
-            }
         }
         units.remove();
     };
@@ -95,8 +87,6 @@ var Constructor = function()
         for (var i = 0; i < units.size(); i++)
         {
             var unit = units.at(i);
-            if (unit.getBaseMaxRange() > 1)
-            {
                 var animation = GameAnimationFactory.createAnimation(map, unit.getX(), unit.getY());
                 var delay = globals.randInt(135, 265);
                 if (animations.length < 7)
@@ -128,7 +118,6 @@ var Constructor = function()
                         counter = 0;
                     }
                 }
-            }
         }
         units.remove();
     };
@@ -192,25 +181,22 @@ var Constructor = function()
             case GameEnums.PowerMode_Tagpower:
             case GameEnums.PowerMode_Superpower:
             case GameEnums.PowerMode_Power:
+            {
                 if (isDefender)
                 {
                     return true;
                 }
-                else if (co.inCORange(Qt.point(atkPosX, atkPosY), attacker, isDefender))
+                break;
+            }
+            default:
+                if (isDefender && co.inCORange(Qt.point(posX, posY), unit))
                 {
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
-            default:
-                return false;
             }
         }
         return false;
     };
-
     this.getCOArmy = function()
     {
         return "BD";

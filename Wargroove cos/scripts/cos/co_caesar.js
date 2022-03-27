@@ -165,7 +165,7 @@ var Constructor = function()
     };
     this.getPowerName = function(co)
     {
-        return qsTr("Inspire");
+        return qsTr("Motivate");
     };
     this.getSuperPowerDescription = function(co)
     {
