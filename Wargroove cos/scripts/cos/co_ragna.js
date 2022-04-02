@@ -2,8 +2,8 @@ var Constructor = function()
 {
     this.init = function(co, map)
     {
-        co.setPowerStars(3);
-        co.setSuperpowerStars(3);
+        co.setPowerStars(5);
+        co.setSuperpowerStars(5);
     };
 
     this.activatePower = function(co, map)
@@ -12,46 +12,7 @@ var Constructor = function()
         var powerNameAnimation = co.createPowerScreen(GameEnums.PowerMode_Power);
         dialogAnimation.queueAnimation(powerNameAnimation);
 
-        var units = co.getOwner().getUnits();
-        var animations = [];
-        var counter = 0;
-        units.randomize();
-        for (var i = 0; i < units.size(); i++)
-        {
-            var unit = units.at(i);
-            var animation = GameAnimationFactory.createAnimation(map, unit.getX(), unit.getY());
-            var delay = globals.randInt(135, 265);
-            if (animations.length < 5)
-            {
-                delay *= i;
-            }
-            if (i % 2 === 0)
-            {
-                animation.setSound("power7_1.wav", 1, delay);
-            }
-            else
-            {
-                animation.setSound("power7_2.wav", 1, delay);
-            }
-            if (animations.length < 5)
-            {
-                animation.addSprite("power7", -map.getImageSize() * 1.27, -map.getImageSize() * 1.27, 0, 2, delay);
-                powerNameAnimation.queueAnimation(animation);
-                animations.push(animation);
-            }
-            else
-            {
-                animation.addSprite("power7", -map.getImageSize() * 1.27, -map.getImageSize() * 1.27, 0, 2, delay);
-                animations[counter].queueAnimation(animation);
-                animations[counter] = animation;
-                counter++;
-                if (counter >= animations.length)
-                {
-                    counter = 0;
-                }
-            }
-        }
-        units.remove();
+        CO_RAGNA.throwMeteor(co, 3, powerNameAnimation, map);
     };
 
     this.activateSuperpower = function(co, powerMode, map)
@@ -60,46 +21,66 @@ var Constructor = function()
         var powerNameAnimation = co.createPowerScreen(powerMode);
         powerNameAnimation.queueAnimationBefore(dialogAnimation);
 
-        var units = co.getOwner().getUnits();
-        var animations = [];
-        var counter = 0;
-        units.randomize();
-        for (var i = 0; i < units.size(); i++)
+        CO_RAGNA.throwMeteor(co, 6.5, powerNameAnimation, map);
+    };
+
+    this.throwMeteor = function(co, damage, powerNameAnimation, map)
+    {
+        // let a meteor fall :D
+        var meteorTarget = co.getOwner().getRockettarget(2, damage);
+        // create cool meteor animation :)
+        var animation = GameAnimationFactory.createAnimation(map, meteorTarget.x + 2, meteorTarget.y - 4);
+        animation.addSprite("ragneor", 0, 0, 2500, 4.0);
+        animation.addTweenPosition(Qt.point((meteorTarget.x - 2) * map.getImageSize(), (meteorTarget.y - 2) * map.getImageSize()), 1000);
+        animation.addTweenScale(0.65, 1000);
+        animation.addTweenColor(0, "#FFFFFFFF", "#00FFFFFF", 1000, false, 1200);
+        animation.addSound("meteorFall.wav");
+        powerNameAnimation.queueAnimation(animation);
+        var animation2 = GameAnimationFactory.createAnimation(map, 0, 0);
+        animation2.addSprite2("white_pixel", 0, 0, 4200, map.getMapWidth(), map.getMapHeight());
+        animation2.addTweenColor(0, "#00FFFFFF", "#FFFFFFFF", 3000, true, 1000);
+        animation2.addSound("meteorImpact.wav");
+        powerNameAnimation.queueAnimation(animation2);
+        animation.setEndOfAnimationCall("CO_RAGNA", "postAnimationThrowMeteor");
+        CO_RAGNA.postAnimationThrowMeteorTarget = meteorTarget;
+        CO_RAGNA.postAnimationThrowMeteorDamage = damage;
+    };
+
+    this.postAnimationThrowMeteorTarget = null;
+    this.postAnimationThrowMeteorDamage = 0;
+    this.postAnimationThrowMeteor = function(animation, map)
+    {
+        var meteorTarget = CO_RAGNA.postAnimationThrowMeteorTarget;
+        var damage = CO_RAGNA.postAnimationThrowMeteorDamage;
+        var fields = globals.getCircle(0, 2);
+        // check all target fields
+        var size = fields.size();
+        for (var i = 0; i < size; i++)
         {
-            var unit = units.at(i);
-            var animation = GameAnimationFactory.createAnimation(map, unit.getX(), unit.getY());
-            var delay = globals.randInt(135, 265);
-            if (animations.length < 7)
+            var x = fields.at(i).x + meteorTarget.x;
+            var y = fields.at(i).y + meteorTarget.y;
+            // check if the target is on the map
+            if (map.onMap(x, y))
             {
-                delay *= i;
-            }
-            if (i % 2 === 0)
-            {
-                animation.setSound("power12_1.wav", 1, delay);
-            }
-            else
-            {
-                animation.setSound("power12_2.wav", 1, delay);
-            }
-            if (animations.length < 7)
-            {
-                animation.addSprite("power12", -map.getImageSize() * 2, -map.getImageSize() * 2, 0, 2, delay);
-                powerNameAnimation.queueAnimation(animation);
-                animations.push(animation);
-            }
-            else
-            {
-                animation.addSprite("power12", -map.getImageSize() * 2, -map.getImageSize() * 2, 0, 2, delay);
-                animations[counter].queueAnimation(animation);
-                animations[counter] = animation;
-                counter++;
-                if (counter >= animations.length)
+                var unit = map.getTerrain(x, y).getUnit();
+                if (unit !== null)
                 {
-                    counter = 0;
+                    var hp = unit.getHpRounded();
+                    if (hp <= damage)
+                    {
+                        // set hp to very very low
+                        unit.setHp(0.001);
+                    }
+                    else
+                    {
+                        unit.setHp(hp - damage);
+                    }
                 }
             }
         }
-        units.remove();
+        fields.remove();
+        CO_RAGNA.postAnimationThrowMeteorTarget = null;
+        CO_RAGNA.postAnimationThrowMeteorDamage = 0;
     };
 
     this.loadCOMusic = function(co, map)
@@ -130,44 +111,7 @@ var Constructor = function()
     {
         return "FH";
     };
-    this.getBonusLuck = function(co, unit, posX, posY, map)
-    {
-        switch (co.getPowerMode())
-        {
-            case GameEnums.PowerMode_Tagpower:
-            case GameEnums.PowerMode_Superpower:
-                return 90;
-            case GameEnums.PowerMode_Power:
-                return 55;
-            default:
-                if (co.inCORange(Qt.point(posX, posY), unit))
-                {
-                    return 25;
-                }
-                break;
-        }
-        return 10;
-    };
-	
-    this.getBonusMisfortune = function(co, unit, posX, posY, map)
-    {
-        switch (co.getPowerMode())
-        {
-            case GameEnums.PowerMode_Tagpower:
-            case GameEnums.PowerMode_Superpower:
-                return 40;
-            case GameEnums.PowerMode_Power:
-                return 20;
-            default:
-                if (co.inCORange(Qt.point(posX, posY), unit))
-                {
-                    return 10;
-                }
-                break;
-        }
-        return 5;
-    };
-
+    
     this.getOffensiveBonus = function(co, attacker, atkPosX, atkPosY,
                                       defender, defPosX, defPosY, isDefender, action, luckmode, map)
     {
@@ -218,19 +162,19 @@ var Constructor = function()
     };
     this.getPowerDescription = function(co)
     {
-        return qsTr("Firepower rises, but so does his chances of reduced firepower.");
+        return qsTr("Ragna leaps into the air. Upon landing she deals 30% damage to surrounding units.");
     };
     this.getPowerName = function(co)
     {
-        return qsTr("Brute Force");
+        return qsTr("Shield Jump");
     };
     this.getSuperPowerDescription = function(co)
     {
-        return qsTr("Firepower rises dramatically, but so does his chances of reduced power.");
+        return qsTr("Ragna leaps into the air. Upon landing she deals 65% damage to surrounding units.");
     };
     this.getSuperPowerName = function(co)
     {
-        return qsTr("Barbaric Blow");
+        return qsTr("Shield Crash");
     };
     this.getPowerSentences = function(co)
     {

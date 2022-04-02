@@ -69,7 +69,6 @@ var Constructor = function()
             animation.writeDataInt32(unit.getX());
             animation.writeDataInt32(unit.getY());
             animation.writeDataInt32(2);
-            animation.setEndOfAnimationCall("CO_MEIYO", "postAnimationRanking");
             var delay = globals.randInt(135, 265);
             if (animations.length < 7)
             {
@@ -104,25 +103,6 @@ var Constructor = function()
         units.remove();
     };
 
-    this.postAnimationRanking = function(postAnimation)
-    {
-        postAnimation.seekBuffer();
-        var x = postAnimation.readDataInt32();
-        var y = postAnimation.readDataInt32();
-        var upgrade = postAnimation.readDataInt32();
-        if (map.onMap(x, y))
-        {
-            var unit = map.getTerrain(x, y).getUnit();
-            if (unit !== null)
-            {
-                for (var i = 0; i < upgrade; i++)
-                {
-                    UNITRANKINGSYSTEM.increaseRang(unit);
-                }
-            }
-        }
-    }
-
     this.loadCOMusic = function(co, map)
     {
         // put the co music in here.
@@ -151,147 +131,136 @@ var Constructor = function()
     {
         return "GS";
     };
+
+    this.coZoneBonus = 20;
     this.getOffensiveBonus = function(co, attacker, atkPosX, atkPosY,
-                                      defender, defPosX, defPosY, isDefender, action, luckmode, map)
+                                 defender, defPosX, defPosY, isDefender, action, luckmode, map)
     {
-        if (unit.getUnitID() === "INFANTRY")
+        switch (co.getPowerMode())
         {
-            return -10;
+            case GameEnums.PowerMode_Tagpower:
+            case GameEnums.PowerMode_Superpower:
+
+            case GameEnums.PowerMode_Power:
+
+            default:
+                if (attacker.getUnitID() === "INFANTRY") { return -20; };
+                // tier 1
+                if (attacker.getUnitID() === "MECH") { return -10; };
+                if (attacker.getUnitID() === "SNIPER") { return -10; };
+                if (attacker.getUnitID() === "MOTORBIKE") { return -10; };
+                if (attacker.getUnitID() === "RECON") { return -10; };
+                if (attacker.getUnitID() === "FLARE") { return -10; };
+                if (attacker.getUnitID() === "FLAKGUN") { return -10; };
+                //tier 2
+                if (attacker.getUnitID() === "ARTILLERY") { return -5; };
+                if (attacker.getUnitID() === "ARTILLERYCRAFT") { return -5; };
+                if (attacker.getUnitID() === "FLAK") { return -5; };
+                if (attacker.getUnitID() === "HOVERFLAK") { return -5; };
+                if (attacker.getUnitID() === "LIGHT_TANK") { return -5; };
+                if (attacker.getUnitID() === "HOVERCRAFT") { return -5; };
+                if (attacker.getUnitID() === "FLAME") { return -5; };
+                if (attacker.getUnitID() === "IFV") { return -5; };
+                if (attacker.getUnitID() === "TECH") { return -5; };
+                if (attacker.getUnitID() === "TRANSPORT_TRUCK") { return -5; };
+                if (attacker.getUnitID() === "K_HELI") { return -5; };
+                if (attacker.getUnitID() === "DUSTER") { return -5; };
+                if (attacker.getUnitID() === "CANNONBOAT") { return -5; };
+                //tier 3
+                if (attacker.getUnitID() === "ANTITANKCANNON") { return 10; };
+                if (attacker.getUnitID() === "MEDIUM_TANK") { return 10; };
+                if (attacker.getUnitID() === "WATERPLANE") { return 10; };
+                if (attacker.getUnitID() === "ASSAULT_FIGHTER") { return 10; };
+                if (attacker.getUnitID() === "CRUISER") { return 10; };
+                if (attacker.getUnitID() === "SUBMARINE") { return 10; };
+                //tier 4
+                if (attacker.getUnitID() === "HEAVY_TANK") { return 20; };
+                if (attacker.getUnitID() === "HEAVY_HOVERCRAFT") { return 20; };
+                if (attacker.getUnitID() === "NEOTANK") { return 20; };
+                if (attacker.getUnitID() === "ROCKETTHROWER") { return 20; };
+                if (attacker.getUnitID() === "MISSILE") { return 20; };
+                if (attacker.getUnitID() === "ASSAULT_GUN") { return 20; };
+                if (attacker.getUnitID() === "TRAIN") { return 20; };
+                if (attacker.getUnitID() === "FLAKTRAIN") { return 20; };
+                if (attacker.getUnitID() === "FIGHTER") { return 20; };
+                if (attacker.getUnitID() === "BOMBER") { return 20; };
+                if (attacker.getUnitID() === "DESTROYER") { return 20; };
+                if (attacker.getUnitID() === "AIRCRAFTCARRIER") { return 20; };
+                //tier 5
+                if (attacker.getUnitID() === "MEGATANK") { return 30; };
+                if (attacker.getUnitID() === "PIPERUNNER") { return 30; };
+                if (attacker.getUnitID() === "SIEGE_TRAIN") { return 30; };
+                if (attacker.getUnitID() === "STEALTHBOMBER") { return 30; };
+                if (attacker.getUnitID() === "BATTLESHIP") { return 30; };
+            break;
         }
-        if (unit.getUnitID() === "ZCOUNIT_PARTISAN")
-        {
-            return -10;
-        }
-        if (unit.getUnitID() === "MECH")
-        {
-            return -5;
-        }
-        if (unit.getUnitID() === "MOROTBIKE")
-        {
-            return -5;
-        }
-        if (unit.getUnitID() === "RECON")
-        {
-            return -5;
-        }
-        if (unit.getUnitID() === "SNIPER")
-        {
-            return -5;
-        }
-        if (unit.getUnitID() === "FLARE")
-        {
-            return -5;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_AT_CYCLE")
-        {
-            return -5;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_HOT_TANK")
-        {
-            return -5;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_SMUGGLER")
-        {
-            return -5;
-        }
-        if (unit.getUnitID() === "ANTITANKCANNON")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "HEAVY_TANK")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "HEAVY_HOVERCRAFT")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "WATERPLANE")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "CRUISER")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "SUBMARINE")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "AIRCRAFTCARRIER")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_AUTO_TANK")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_KIROV")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_TANK_HUNTER")
-        {
-            return 10;
-        }
-        if (unit.getUnitID() === "NEOTANK")
-        {
-            return 20;
-        }
-        if (unit.getUnitID() === "REOCKETTHROWER")
-        {
-            return 20;
-        }
-        if (unit.getUnitID() === "MISSILE")
-        {
-            return 20;
-        }
-        if (unit.getUnitID() === "FIGHTER")
-        {
-            return 20;
-        }
-        if (unit.getUnitID() === "BOMBER")
-        {
-            return 20;
-        }
-        if (unit.getUnitID() === "BATTLESHIP")
-        {
-            return 20;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_NEOSPIDER_TANK")
-        {
-            return 20;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_ROYAL_GUARD")
-        {
-            return 20;
-        }
-        if (unit.getUnitID() === "MEGATANK")
-        {
-            return 30;
-        }
-        if (unit.getUnitID() === "STEALTHBOMBER")
-        {
-            return 30;
-        }
-        if (unit.getUnitID() === "DESTROYER")
-        {
-            return 30;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_SIEGE_CANNON")
-        {
-            return 30;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_CRYSTAL_TANK")
-        {
-            return 30;
-        }
-        if (unit.getUnitID() === "ZCOUNIT_MISSILE_SUB")
-        {
-            return 30;
-        }
+        return 0;
     };
 
+    this.getDeffensiveBonus = function(co, attacker, atkPosX, atkPosY,
+                                 defender, defPosX, defPosY, isAttacker, action, luckmode, map)
+    {
+        switch (co.getPowerMode())
+        {
+            case GameEnums.PowerMode_Tagpower:
+            case GameEnums.PowerMode_Superpower:
+
+            case GameEnums.PowerMode_Power:
+
+            default:
+                // tier 0
+                if (defender.getUnitID() === "INFANTRY") { return -20; };
+                // tier 1
+                if (defender.getUnitID() === "MECH") { return -10; };
+                if (defender.getUnitID() === "SNIPER") { return -10; };
+                if (defender.getUnitID() === "MOTORBIKE") { return -10; };
+                if (defender.getUnitID() === "RECON") { return -10; };
+                if (defender.getUnitID() === "FLARE") { return -10; };
+                if (defender.getUnitID() === "FLAKGUN") { return -10; };
+                //tier 2
+                if (defender.getUnitID() === "ARTILLERY") { return -5; };
+                if (defender.getUnitID() === "ARTILLERYCRAFT") { return -5; };
+                if (defender.getUnitID() === "FLAK") { return -5; };
+                if (defender.getUnitID() === "HOVERFLAK") { return -5; };
+                if (defender.getUnitID() === "LIGHT_TANK") { return -5; };
+                if (defender.getUnitID() === "HOVERCRAFT") { return -5; };
+                if (defender.getUnitID() === "FLAME") { return -5; };
+                if (defender.getUnitID() === "IFV") { return -5; };
+                if (defender.getUnitID() === "TECH") { return -5; };
+                if (defender.getUnitID() === "TRANSPORT_TRUCK") { return -5; };
+                if (defender.getUnitID() === "K_HELI") { return -5; };
+                if (defender.getUnitID() === "DUSTER") { return -5; };
+                if (defender.getUnitID() === "CANNONBOAT") { return -5; };
+                //tier 3
+                if (defender.getUnitID() === "ANTITANKCANNON") { return 10; };
+                if (defender.getUnitID() === "MEDIUM_TANK") { return 10; };
+                if (defender.getUnitID() === "WATERPLANE") { return 10; };
+                if (defender.getUnitID() === "ASSAULT_FIGHTER") { return 10; };
+                if (defender.getUnitID() === "CRUISER") { return 10; };
+                if (defender.getUnitID() === "SUBMARINE") { return 10; };
+                //tier 4
+                if (defender.getUnitID() === "HEAVY_TANK") { return 20; };
+                if (defender.getUnitID() === "HEAVY_HOVERCRAFT") { return 20; };
+                if (defender.getUnitID() === "NEOTANK") { return 20; };
+                if (defender.getUnitID() === "ROCKETTHROWER") { return 20; };
+                if (defender.getUnitID() === "MISSILE") { return 20; };
+                if (defender.getUnitID() === "ASSAULT_GUN") { return 20; };
+                if (defender.getUnitID() === "TRAIN") { return 20; };
+                if (defender.getUnitID() === "FLAKTRAIN") { return 20; };
+                if (defender.getUnitID() === "FIGHTER") { return 20; };
+                if (defender.getUnitID() === "BOMBER") { return 20; };
+                if (defender.getUnitID() === "DESTROYER") { return 20; };
+                if (defender.getUnitID() === "AIRCRAFTCARRIER") { return 20; };
+                //tier 5
+                if (defender.getUnitID() === "MEGATANK") { return 30; };
+                if (defender.getUnitID() === "PIPERUNNER") { return 30; };
+                if (defender.getUnitID() === "SIEGE_TRAIN") { return 30; };
+                if (defender.getUnitID() === "STEALTHBOMBER") { return 30; };
+                if (defender.getUnitID() === "BATTLESHIP") { return 30; };
+            break;
+        }
+        return 0;
+    };
     this.getAiCoUnitBonus = function(co, unit, map)
     {
         return 1;

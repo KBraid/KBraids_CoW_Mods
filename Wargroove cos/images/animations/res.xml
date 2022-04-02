@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<resources>
+	<set path = "mods/Wargroove cos/images/animations/" />
+	<atlas linearFilter="false">
+		<!-- static -->
+		<image file="ragneor.png" />
+		<image file="ragneor+mask.png" />
+	</atlas>
+</resources>

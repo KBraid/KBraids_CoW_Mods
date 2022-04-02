@@ -30,7 +30,7 @@ var Constructor = function()
             hasDriver = true;
             wikiSprite = false;
         }
-        unit.updateSprites(false)
+        unit.updateSprites(false);
     };
     this.getBaseCost = function()
     {

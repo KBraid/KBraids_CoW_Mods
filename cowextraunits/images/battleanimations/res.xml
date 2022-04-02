@@ -2,7 +2,40 @@
 <resources>
         <set path = "mods/cowextraunits/images/battleanimations/" />
 	<atlas linearFilter="false">
-                <image file="atv+mask.png" />
-                <image file="atv+driver+mask.png" />
+                <image file="atv/atv+mask.png" />
+                <image file="atv/atv+driver+mask.png" />
+
+                <image file="frogman/frogman+dying+mask.png" />
+                <image file="frogman/frogman+mask.png" />
+                <image file="frogman/frogman+walk+mask.png" cols = "6" />
+                <image file="frogman/frogman+stop+mask.png" cols = "2" />
+                <image file="frogman/frogman+fire+mask.png" cols = "2" />
+                <image file="frogman/frogman+fire+up+mask.png" cols = "2" />
+                <image file="frogman/frogman+fire+down+mask.png" cols = "2" />
+
+                <image file="frogman/frogman+river.png" />
+                <image file="frogman/frogman+river+walk.png" cols = "6" />
+                <image file="frogman/frogman+river+stop.png" cols = "2" />
+                <image file="frogman/frogman+river+fire.png" cols = "2" />
+                <image file="frogman/frogman+river+fire+up.png" cols = "2" />
+
+                <image file="frogman/frogman+river+mask.png" />
+                <image file="frogman/frogman+river+walk+mask.png" cols = "6" />
+                <image file="frogman/frogman+river+stop+mask.png" cols = "2" />
+                <image file="frogman/frogman+river+fire+mask.png" cols = "2" />
+                <image file="frogman/frogman+river+fire+up+mask.png" cols = "2" />
+
+                <image file="frogman/frogman+sea+mask.png" />
+                <image file="frogman/frogman+sea+walk+mask.png" />
+                <image file="frogman/frogman+sea+stop+mask.png" cols = "2" />
+                <image file="frogman/frogman+sea+fire+mask.png" cols = "2" />
+                <image file="frogman/frogman+sea+fire+up+mask.png" cols = "2" />
+                
+                <image file="frogman/frogman+sea+torp+mask.png" />
+                <image file="frogman/frogman+sea+torp+walk+mask.png" />
+                <image file="frogman/frogman+sea+torp+stop+mask.png" cols = "2" />
+
+                <image file="frogman/frogman+sea+shadow.png" cols = "4" />
+                <image file="frogman/frogman+sea+shadow+mask.png" cols = "4" />
 	</atlas>
 </resources>

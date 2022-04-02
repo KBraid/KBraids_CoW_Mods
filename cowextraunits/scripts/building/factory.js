@@ -1,1 +1,1 @@
-FACTORY.constructionList.push("ATV");
+FACTORY.constructionList.push("ATV", "FROGMAN");

@@ -1,6 +1,6 @@
 name=Wargroove COs
 description=Adds the commanders from Wargroove
-version=1.0.1
+version=1.0.2
 compatible_mods=
 incompatible_mods=
 required_mods=
