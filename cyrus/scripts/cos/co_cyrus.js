@@ -301,6 +301,10 @@ var Constructor = function()
         }
     };
 
+    this.getRepairBonus = function(co, unit, posX, posY, map)
+    {
+        return -1;
+    };
     this.getAiCoUnitBonus = function(co, unit, map)
     {
         return 1;
