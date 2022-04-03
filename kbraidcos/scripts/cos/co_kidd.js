@@ -197,6 +197,18 @@ var Constructor = function()
         }
         return false;
     };
+    this.canCounterAttack = function(co, attacker, atkPosX, atkPosY,
+                                defender, defPosX, defPosY, luckMode, map)
+    {
+        switch (co.getPowerMode())
+        {
+            case GameEnums.PowerMode_Tagpower:
+            case GameEnums.PowerMode_Superpower:
+            return GameEnums.CounterAttackMode_Possible;
+        };
+        return GameEnums.CounterAttackMode_Undefined;
+    };
+    
     this.getCOArmy = function()
     {
         return "BD";
