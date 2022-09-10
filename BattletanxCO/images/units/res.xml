@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<resources>
+    <set path = "mods/BattletanxCO/images/units/" />
+    <atlas linearFilter="false">
+        <image file="goliathtank+mask.png" cols = "4"  />
+        <image file="goliathtank+walk+mask.png" cols = "3" rows = "4"  />
+    </atlas>
+</resources>

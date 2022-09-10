@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<resources>
+    <set path = "mods/BattletanxCO/images/battleanimations/" />
+    <atlas linearFilter="false">
+        <image file="goliath/goliath_tank+fire+mask.png" />
+        <image file="goliath/goliath_tank+mask.png" />
+        <image file="goliath/goliath_tank+move+mask.png" />
+        <image file="goliath/goliath_tank+stop+mask.png" />
+    </atlas>
+</resources>

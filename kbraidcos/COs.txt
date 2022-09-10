@@ -1,0 +1,37 @@
+Braid - 
+
+D2D: any of his units that are adjacent to an allied unit gains +10 defence.
+COZ: all units inside his COZ gain +5 attack and defense for every allied unit within the COZ
+COZ range: 1
+COP - Shrike
+cost: 4
+all units get +20 attack. all infantry units are unimpeded by terrain and can move over impassable terrain.
+SCOP - Shadow Strike
+cost: 6
+all units gain +40 attack and become hidden as well as gain +2 movement
+
+
+Eili - the Pacifist CO
+
+D2D: all her units have -20 attack. every time one of her units attacks or gets attacked, the enemy gets -5 attack and defense (stacks until the next turn)
+COZ: all enemy units within the CO zone get -10 attack and defense.
+COZ range: 2
+COP - Call for Peace
+cost: 3
+all enemy units have their attack reduced by -20 and defense by -10
+SCOP - Ceasefire
+cost: 5
+all units on the map have their attack reduced by -50 and defense by -20. all enemy units have their ammo supply cut in half.
+
+
+Kidd - the Outlaw CO
+A wanted fugitive in Blue Moon, Kidd fled to Brown Desert after stealing a notable portion of the Gates family's vast fortune during a train robbery. Olaf had dispatched grit to bring him in, however upon confronting Kidd Grit instead offered a set of sharpshooting challenges for him to keep his freedom. After beating all but one of Grit's challenges Grit chose to let him go, though only after returning the stolen gains.
+
+d2d: all units have +20 attack and -10 defense and deal extra damage against transports and trains (Cat units)
+CO zone: all units attack first when counterattacking
+COZ range: 2
+COP - Big Iron: Indirect minimum range reduced by 1 and attack increased by 20, indirects can counterattack direct units if within minimum range
+cost: 4
+SCOP - Desperado: Indirect minimum range reduced by 2 and attack increased by 40, indirects can counterattack any units if within minimum range
+cost: 6
+Synergies: Grit 10, Olaf -10, Colin -30, Sasha -30, Alexander -5

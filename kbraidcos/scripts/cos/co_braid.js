@@ -133,7 +133,7 @@ var Constructor = function()
                 audio.addMusic("resources/music/cos/power.mp3", 992, 45321);
                 break;
             case GameEnums.PowerMode_Superpower:
-                audio.addMusic("resources/music/cos/superpower.mp3", 1505, 49515);
+                audio.addMusic("mods/kbraidcos/music/cos/braidscop.mp3", 194556, 371430);
                 break;
             case GameEnums.PowerMode_Tagpower:
                 audio.addMusic("resources/music/cos/tagpower.mp3", 14611, 65538);

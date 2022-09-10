@@ -140,9 +140,11 @@ var Constructor = function()
         {
             case GameEnums.PowerMode_Tagpower:
             case GameEnums.PowerMode_Superpower:
-
+            var bonus = attacker.getBaseCost() / 500;
+            return bonus;
             case GameEnums.PowerMode_Power:
-
+            var bonus = attacker.getBaseCost() / 1000;
+            return bonus;
             default:
                 if (attacker.getUnitID() === "INFANTRY") { return -20; };
                 // tier 1
@@ -204,9 +206,9 @@ var Constructor = function()
         {
             case GameEnums.PowerMode_Tagpower:
             case GameEnums.PowerMode_Superpower:
-
+            var bonus = defender.getBaseCost() / 500;
             case GameEnums.PowerMode_Power:
-
+            var bonus = defender.getBaseCost() / 1000;
             default:
                 // tier 0
                 if (defender.getUnitID() === "INFANTRY") { return -20; };
@@ -264,6 +266,18 @@ var Constructor = function()
     this.getAiCoUnitBonus = function(co, unit, map)
     {
         return 1;
+    };
+
+    this.getCOUnits = function(co, building, map)
+    {
+        var buildingId = building.getBuildingID();
+        if (buildingId === "FACTORY" ||
+            buildingId === "TOWN" ||
+            buildingId === "HQ")
+        {
+            return ["ZCOUNIT_COMMANDO"];
+        }
+        return [];
     };
 
     // CO - Intel

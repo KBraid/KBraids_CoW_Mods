@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<resources>
+    <set path = "mods/BattletanxCO/images/co" />
+    
+    <atlas linearFilter="false">
+        <image file="co_cassandrabt+info.png" />
+        <image file="co_cassandrabt+face.png" cols = "3" />
+        <image file="co_cassandrabt+nrm.png" />
+        <image file="co_griffinspade+info.png" />
+        <image file="co_griffinspade+face.png" cols = "3" />
+        <image file="co_griffinspade+nrm.png" />
+    </atlas>
+</resources>

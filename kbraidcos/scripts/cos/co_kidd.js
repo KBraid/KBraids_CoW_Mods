@@ -124,7 +124,7 @@ var Constructor = function()
 
     this.getCOUnitRange = function(co, map)
     {
-        return 2;
+        return 1;
     };
     this.getOffensiveBonus = function(co, attacker, atkPosX, atkPosY,
                                  defender, defPosX, defPosY, isDefender, action, luckmode, map)
