@@ -12,10 +12,10 @@ var Constructor = function()
                         ["FLARE", 115],
                         ["RECON", 115],
 
-                        ["INFANTRY", 40],
-                        ["MECH", 35],
-                        ["MOTORBIKE", 75],
-                        ["SNIPER", 70],
+                        ["INFANTRY", 65],
+                        ["MECH", 65],
+                        ["MOTORBIKE", 85],
+                        ["SNIPER", 75],
 
                         // tanks
                         ["FLAK", 115],
