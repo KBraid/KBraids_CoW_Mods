@@ -15,6 +15,10 @@
         <image file="bd/co_kidd+info.png" />
         <image file="bd/co_kidd+face.png" cols = "3" />
 
+        <image file="bm/co_Gates+nrm.png" />
+        <image file="bm/co_Gates+info.png" />
+        <image file="bm/co_Gates+face.png" cols = "3" />
+
         <image file="gs/co_danial+nrm.png" />
         <image file="gs/co_danial+info.png" />
         <image file="gs/co_danial+mini.png" />
