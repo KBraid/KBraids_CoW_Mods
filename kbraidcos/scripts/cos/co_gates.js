@@ -15,7 +15,7 @@ var Constructor = function()
                 audio.addMusic("resources/music/cos/tagpower.mp3", 14611, 65538);
                 break;
             default:
-                audio.addMusic("mods/kbraidcos/music/cos/Gates.mp3",  73770, 143510);
+                audio.addMusic("mods/kbraidcos/music/cos/Gates.mp3",  47485, 94945);
                 break;
         }
     };
