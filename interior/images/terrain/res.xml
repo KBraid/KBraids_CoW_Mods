@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<resources>
+	<set path = "mods/interior/images/terrain/" />
+	<atlas linearFilter="false">
+		<image file="interior+E+S+W.png" />
+		<image file="interior+E+S.png" />
+		<image file="interior+E+W.png" />
+		<image file="interior+E.png" />
+		<image file="interior+N+E+S+W.png" />
+		<image file="interior+N+E+S.png" />
+		<image file="interior+N+E+W.png" />
+		<image file="interior+N+E.png" />
+		<image file="interior+N+S+W.png" />
+		<image file="interior+N+S.png" />
+		<image file="interior+N+W.png" />
+		<image file="interior+N.png" />
+		<image file="interior+S+W.png" />
+		<image file="interior+S.png" />
+		<image file="interior+W.png" />
+		<image file="interior.png" />
+		<image file="interior+NE.png" />
+		<image file="interior+NW.png" />
+		<image file="interior+SE.png" />
+		<image file="interior+SW.png" />
+		<image file="interiortile+0.png" />
+		<image file="interiortile+1.png" />
+		<image file="interiortile+2.png" />
+		<image file="interiortile+3.png" />
+		<image file="interiortile+4.png" />
+		<image file="interiortile+5.png" />
+		<image file="interiortile+6.png" />
+	</atlas>
+</resources>

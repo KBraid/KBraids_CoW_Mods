@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<resources>
+    <set path = "mods/interior/images/terrain/" />
+    <atlas linearFilter="false">
+        <image file="battlesprites/foreground/fore_interior.png" />
+        <image file="battlesprites/foreground/fore_interiortile.png" />
+    </atlas>
+</resources>
+

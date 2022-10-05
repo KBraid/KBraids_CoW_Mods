@@ -1,0 +1,8 @@
+name=Interior Terrain
+description= adds the Interior terrain type inspired by the flagstone terrain from Wargroove
+version=1
+compatible_mods=
+incompatible_mods=
+required_mods=
+cosmetic=false
+tags=Gameplay
