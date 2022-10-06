@@ -13,41 +13,14 @@ var Constructor = function()
     {
         return qsTr("Interior");
     };
-    this.loadBaseTerrain = function(terrain, currentTerrainID, map)
-    {
-        if (currentTerrainID === "SNOW")
-        {
-            terrain.loadBaseTerrain("SNOW");
-        }
-        else if (currentTerrainID === "DESERT")
-        {
-            terrain.loadBaseTerrain("DESERT");
-        }
-        else if (currentTerrainID === "WASTE")
-        {
-            terrain.loadBaseTerrain("WASTE");
-        }
-        else
-        {
-            terrain.loadBaseTerrain("PLAINS");
-        }
-    };
     this.getDefense = function(terrain)
     {
             return 2;
     };
     this.loadBaseSprite = function(terrain, currentTerrainID, map)
     {
-        var random = globals.randInt(0, 140);
-        if (random >= 15)
-        {
-            random = globals.randInt(15, 20);
+        var random = globals.randInt(0, 6);
             terrain.loadBaseSprite("interiortile+" + random.toString());
-        }
-        else
-        {
-            terrain.loadBaseSprite("interiortile+" + random.toString());
-        }
     };
     this.getMiniMapIcon = function()
     {
@@ -67,5 +40,5 @@ var Constructor = function()
         return "fore_interiortile";
     };
 };
-Constructor.prototype = __BASEINTERIORTILE;
+Constructor.prototype = TERRAIN;
 var INTERIORTILE = new Constructor();
