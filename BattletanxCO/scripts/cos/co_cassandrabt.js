@@ -42,7 +42,7 @@ var Constructor = function(){
             return 0;
         }
     };
-      this.activateSuperpower = function(co, powerMode, map)
+    this.activateSuperpower = function(co, powerMode, map)
     {
         var dialogAnimation = co.createPowerSentence();
         var powerNameAnimation = co.createPowerScreen(powerMode);
@@ -55,12 +55,9 @@ var Constructor = function(){
         for (var i = 0; i < units.size(); i++)
         {
             var unit = units.at(i);
+            unit.refill();
 
             var animation = GameAnimationFactory.createAnimation(map, unit.getX(), unit.getY());
-            animation.writeDataInt32(unit.getX());
-            animation.writeDataInt32(unit.getY());
-            animation.writeDataInt32(5);
-            animation.setEndOfAnimationCall("ANIMATION", "postAnimationHeal");
             var delay = globals.randInt(135, 265);
             if (animations.length < 7)
             {
@@ -68,21 +65,21 @@ var Constructor = function(){
             }
             if (i % 2 === 0)
             {
-                animation.setSound("power12_1.wav", 1, delay);
+                animation.setSound("power9_1.wav", 1, delay);
             }
             else
             {
-                animation.setSound("power12_2.wav", 1, delay);
+                animation.setSound("power9_2.wav", 1, delay);
             }
             if (animations.length < 7)
             {
-                animation.addSprite("power12", -map.getImageSize() * 2, -map.getImageSize() * 2, 0, 2, delay);
+                animation.addSprite("power9", -map.getImageSize() * 2, -map.getImageSize() * 2, 0, 2, delay);
                 powerNameAnimation.queueAnimation(animation);
                 animations.push(animation);
             }
             else
             {
-                animation.addSprite("power12", -map.getImageSize() * 2, -map.getImageSize() * 2, 0, 2, delay);
+                animation.addSprite("power9", -map.getImageSize() * 2, -map.getImageSize() * 2, 0, 2, delay);
                 animations[counter].queueAnimation(animation);
                 animations[counter] = animation;
                 counter++;
@@ -92,7 +89,6 @@ var Constructor = function(){
                 }
             }
         }
-        units.remove();
     };
 
     this.getBio = function (co) {

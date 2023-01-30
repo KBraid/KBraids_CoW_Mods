@@ -75,7 +75,8 @@ var Constructor = function(){
         return 0;
     };
 
-      this.activatePower = function(co, map)
+
+    this.activatePower = function(co, map)
     {
         var dialogAnimation = co.createPowerSentence();
         var powerNameAnimation = co.createPowerScreen(GameEnums.PowerMode_Power);
@@ -84,16 +85,14 @@ var Constructor = function(){
         var units = co.getOwner().getUnits();
         var animations = [];
         var counter = 0;
+
         units.randomize();
         for (var i = 0; i < units.size(); i++)
         {
             var unit = units.at(i);
+            unit.refill();
 
             var animation = GameAnimationFactory.createAnimation(map, unit.getX(), unit.getY());
-            animation.writeDataInt32(unit.getX());
-            animation.writeDataInt32(unit.getY());
-            animation.writeDataInt32(2);
-            animation.setEndOfAnimationCall("ANIMATION", "postAnimationHeal");
             var delay = globals.randInt(135, 265);
             if (animations.length < 5)
             {
@@ -118,11 +117,9 @@ var Constructor = function(){
                 }
             }
         }
-        units.remove();
     };
 
-
-      this.activateSuperpower = function(co, powerMode, map)
+    this.activateSuperpower = function(co, powerMode, map)
     {
         var dialogAnimation = co.createPowerSentence();
         var powerNameAnimation = co.createPowerScreen(powerMode);
@@ -135,12 +132,9 @@ var Constructor = function(){
         for (var i = 0; i < units.size(); i++)
         {
             var unit = units.at(i);
+            unit.refill();
 
             var animation = GameAnimationFactory.createAnimation(map, unit.getX(), unit.getY());
-            animation.writeDataInt32(unit.getX());
-            animation.writeDataInt32(unit.getY());
-            animation.writeDataInt32(5);
-            animation.setEndOfAnimationCall("ANIMATION", "postAnimationHeal");
             var delay = globals.randInt(135, 265);
             if (animations.length < 7)
             {
@@ -172,7 +166,6 @@ var Constructor = function(){
                 }
             }
         }
-        units.remove();
     };
 
 
