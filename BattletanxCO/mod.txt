@@ -1,6 +1,6 @@
 name=BattleTanx COs
 description=Adds two new COs and one unit.
-version=1.
+version=1.1.1
 compatible_mods=
 incompatible_mods=
 required_mods=
