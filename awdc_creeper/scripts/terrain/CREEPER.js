@@ -7,6 +7,10 @@ var Constructor = function()
     // loader for stuff which needs C++ Support
     this.init = function (terrain)
     {
+        if (terrain.getPalette() === "")
+        {
+            terrain.setPalette(CREEPER.getDefaultPalette());
+        }
         terrain.setTerrainName(CREEPER.getName());
         terrain.setHasStartOfTurn(true);
     };
@@ -14,19 +18,23 @@ var Constructor = function()
     {
         return qsTr("Creeper");
     };
-    this.loadBaseTerrain = function(terrain, currentTerrainID)
+    this.loadBaseTerrain = function(terrain, currentTerrainID, map, currentPalette)
     {
         if (currentTerrainID === "SNOW")
         {
-            terrain.loadBaseTerrain("SNOW");
+            terrain.loadBaseTerrain("SNOW", currentPalette);
         }
         else if (currentTerrainID === "DESERT")
         {
-            terrain.loadBaseTerrain("DESERT");
+            terrain.loadBaseTerrain("DESERT", currentPalette);
         }
         else if (currentTerrainID === "WASTE")
         {
-            terrain.loadBaseTerrain("WASTE");
+            terrain.loadBaseTerrain("WASTE", currentPalette);
+        }
+        else if (currentTerrainID === "PLAINS")
+        {
+            terrain.loadBaseTerrain("PLAINS", currentPalette);
         }
         else
         {
