@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<resources>
+    <set path = "mods/SMB3 terrain palette/images/terrain/" />
+    <atlas linearFilter = "false">
+        <!-- biomes -->
+        <image file="biome_palettes/palette_clear+smb3.png" />
+        <image file="biome_palettes/palette_waste+smb3.png" />
+        <image file="biome_palettes/palette_desert+smb3.png" />
+        <image file="biome_palettes/palette_snow+smb3.png" />
+    </atlas>
+</resources>

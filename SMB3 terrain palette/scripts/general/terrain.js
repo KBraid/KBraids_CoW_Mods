@@ -1,0 +1,4 @@
+TERRAIN.paletteTable.push([qsTr("Clear SMB3"),   "palette_clear+smb3",   "palette_clear+smb3",   "palette_desert+smb3",       "palette_snow+smb3",     "palette_waste+smb3"],
+                    [qsTr("Desert SMB3"),   "palette_desert+smb3",   "palette_desert+smb3",   "palette_desert+smb3",       "palette_snow+smb3",     "palette_waste+smb3"],
+                    [qsTr("Snow SMB3"),     "palette_snow+smb3",     "palette_snow+smb3",     "palette_desert+smb3",   "palette_snow+smb3",         "palette_waste+smb3"],
+                    [qsTr("Waste SMB3"),    "palette_waste+smb3",    "palette_waste+smb3",    "palette_desert+smb3",   "palette_snow+smb3",     "palette_waste+smb3"],);
