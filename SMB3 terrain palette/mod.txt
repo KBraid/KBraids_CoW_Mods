@@ -1,5 +1,5 @@
-name=SFW+WG terrain palette unlock
-description=allows selection of desert, winter, and waste versions of the SFW and Wargroove terrain palettes, making the waste sea and various wargroove walls accessable.
+name=SuperMarioBros3 terrain palettes
+description=adds smb3 style terrain palettes.
 version=1
 compatible_mods=
 incompatible_mods=
