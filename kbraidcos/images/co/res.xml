@@ -19,6 +19,10 @@
         <image file="bm/co_Gates+info.png" />
         <image file="bm/co_Gates+face.png" cols = "3" />
 
+        <image file="ma/co_bfcr38+nrm.png" />
+        <image file="ma/co_bfcr38+info.png" />
+        <image file="ma/co_bfcr38+face.png" cols = "3" />
+
         <image file="gs/co_danial+nrm.png" />
         <image file="gs/co_danial+info.png" />
         <image file="gs/co_danial+mini.png" />
