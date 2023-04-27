@@ -1,14 +1,14 @@
 Braid - 
 
-D2D: any of his units that are adjacent to an allied unit gains +10 defence.
-COZ: all units inside his COZ gain +5 attack and defense for every allied unit within the COZ
-COZ range: 1
-COP - Shrike
+D2D: all infantry units are unimpeded by terrain and can move over impassable terrain.
+COZ: all units inside his COZ gain +10 attack and defense for every allied adjacent unit
+COZ range: 2
+COP - Shadow Strike
 cost: 4
-all units get +20 attack. all infantry units are unimpeded by terrain and can move over impassable terrain.
-SCOP - Shadow Strike
+all units gain +30 attack and become hidden as well as gain +2 movement
+SCOP - Absolute Fury
 cost: 6
-all units gain +40 attack and become hidden as well as gain +2 movement
+luck damage is increased by 25%, the more damaged a unit is the more likely it will land lucky hits. all units take 2hp recoil damage after attacking but if they make a kill their turn is restored. Recoil damage can kill the unit.
 
 
 Eili - the Pacifist CO

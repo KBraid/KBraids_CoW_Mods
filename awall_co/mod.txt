@@ -1,0 +1,8 @@
+name= Vanilla franchise CO megamod
+description=This mod both restores and adds each and all versions of every co from the whole of the advance wars franchise, allowing you to play as any version of each and all of them. 
+version=1.0.0
+compatible_mods=
+incompatible_mods=mods/awdc_co;mods/awds_co;mods/aw2_co;mods/aw_co
+required_mods=
+cosmetic=false
+tags=Advance Wars;COs
