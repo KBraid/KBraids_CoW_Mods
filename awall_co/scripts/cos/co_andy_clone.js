@@ -18,7 +18,7 @@ var Constructor = function()
 
     this.init = function(co, map)
     {
-        co.setPowerStars(3.333333333333333);
+        co.setPowerStars(6);
     };
 
     this.activatePower = function(co, map)

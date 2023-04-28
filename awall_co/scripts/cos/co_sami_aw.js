@@ -1,16 +1,8 @@
 var Constructor = function()
 {
-    this.getCOStyles = function()
-    {
-        // string array containing the endings of the alternate co style
-
-        return ["+alt"];
-    };
-
     this.init = function(co, map)
     {
-        co.setPowerStars(3);
-        co.setSuperpowerStars(6);
+        co.setPowerStars(5);
     };
 
     this.loadCOMusic = function(co, map)
@@ -20,9 +12,6 @@ var Constructor = function()
         {
         case GameEnums.PowerMode_Power:
             audio.addMusic("resources/music/cos/power.mp3", 992, 45321);
-            break;
-        case GameEnums.PowerMode_Superpower:
-            audio.addMusic("resources/music/cos/superpower.mp3", 1505, 49515);
             break;
         case GameEnums.PowerMode_Tagpower:
             audio.addMusic("resources/music/cos/tagpower.mp3", 14611, 65538);
@@ -148,24 +137,14 @@ var Constructor = function()
         switch (co.getPowerMode())
         {
         case GameEnums.PowerMode_Tagpower:
-        case GameEnums.PowerMode_Superpower:
-            if (attacker.getUnitType() === GameEnums.UnitType_Infantry)
-            {
-                return 90;
-            }
-            else if (attacker.getBaseMaxRange() === 1)
-            {
-                return 0;
-            }
-            return 10;
         case GameEnums.PowerMode_Power:
             if (attacker.getUnitType() === GameEnums.UnitType_Infantry)
             {
-                return 60;
+                return 54;
             }
-            else if (attacker.getBaseMaxRange() === 1)
+            if (attacker.getBaseMaxRange() === 1)
             {
-                return 0;
+                return -1;
             }
             return 10;
         default:
@@ -182,13 +161,21 @@ var Constructor = function()
         return 0;
     };
     this.getDeffensiveBonus = function(co, attacker, atkPosX, atkPosY,
-     defender, defPosX, defPosY, isAttacker, action, luckmode, map)
+       defender, defPosX, defPosY, isAttacker, action, luckmode, map)
     {
         switch (co.getPowerMode())
         {
         case GameEnums.PowerMode_Tagpower:
-        case GameEnums.PowerMode_Superpower:
         case GameEnums.PowerMode_Power:
+            if (defender.getUnitType() === GameEnums.UnitType_Infantry)
+            {
+                return 28;
+            }
+            {
+                return 10;
+            }
+        default:
+            if (defender.getUnitType() === GameEnums.UnitType_Infantry)
             {
                 return 10;
             }
@@ -200,7 +187,7 @@ var Constructor = function()
         switch (co.getPowerMode())
         {
         case GameEnums.PowerMode_Tagpower:
-        case GameEnums.PowerMode_Superpower:
+        case GameEnums.PowerMode_Power:
             {
                 return 20;
             }
@@ -211,8 +198,25 @@ var Constructor = function()
         }
     };
 
+    this.getMovementcostModifier = function(co, unit, posX, posY, map)
+    {
+        switch (co.getPowerMode())
+        {
+        case GameEnums.PowerMode_Tagpower:
+        case GameEnums.PowerMode_Power:
+            if (unit.getUnitType() === GameEnums.UnitType_Infantry)
+            {
+                return 0;
+            }
+        }
+        return 1;
+    };
     this.getMovementpointModifier = function(co, unit, posX, posY, map)
     {
+        if (unit.isTransporter())
+        {
+            return 1;
+        }
         if (unit.getUnitType() === GameEnums.UnitType_Infantry)
         {
             switch (co.getPowerMode())
@@ -279,23 +283,15 @@ var Constructor = function()
     this.getLongCODescription = function()
     {
         return qsTr("\nSpecial Unit:\nCommando\n") +
-        qsTr("\nGlobal Effect: \nSami's foot soldier units have 120% firepower and capture at 1.5 times the normal rate. Her other direct-combat units deal 90% damage.");
+        qsTr("\nGlobal Effect: \nSami's foot soldier units deal 120% damage, receive 90% damage, and capture at 1.5 times the normal rate. Her transport units have one extra movement space. Her other direct-combat units deal 90% damage.");
     };
     this.getPowerDescription = function(co)
     {
-        return qsTr("Sami's foot soldiers gain 1 movement and their firepower becomes 160%. (Standard +10% firepower and defense.)");
+        return qsTr("Sami's foot soldier units get one extra movement space, their movement becomes unhindered by terrain and weather, and their stats increase. Sami's universal stats become 110% damage dealt and 90% damage received, which translates to 154% (140% x 110%) damage dealt with and 72% (80% x 90%) damage received by her foot soldiers, 99% (90% x 110%) damage dealt with other direct-combat units and 110% damage dealt with indirect-combat units.");
     };
     this.getPowerName = function(co)
     {
         return qsTr("Double Time");
-    };
-    this.getSuperPowerDescription = function(co)
-    {
-        return qsTr("Sami's foot soldiers gain 2 movement, increase their capture rate to 2000%, and their firepower becomes 190%. (Standard +10% firepower and defense.)");
-    };
-    this.getSuperPowerName = function(co)
-    {
-        return qsTr("Victory March");
     };
     this.getPowerSentences = function(co)
     {
@@ -319,9 +315,9 @@ var Constructor = function()
     };
     this.getName = function()
     {
-        return qsTr("Sami (AWDS)");
+        return qsTr("Sami (AW)");
     };
 }
 
 Constructor.prototype = CO;
-var CO_SAMI = new Constructor();
+var CO_SAMI_AW = new Constructor();

@@ -243,7 +243,7 @@ var Constructor = function()
     };
     this.getName = function()
     {
-        return qsTr("Andy");
+        return qsTr("Andy (AW2)");
     };
 }
 

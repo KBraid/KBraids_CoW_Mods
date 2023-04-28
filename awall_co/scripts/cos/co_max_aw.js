@@ -7,7 +7,7 @@ var Constructor = function()
 
     this.init = function(co, map)
     {
-        co.setPowerStars(3);
+        co.setPowerStars(6);
     };
 
     this.loadCOMusic = function(co, map)
@@ -176,7 +176,7 @@ var Constructor = function()
         case GameEnums.PowerMode_Power:
             if (defender.getBaseMaxRange() > 1)
             {
-                return 0;
+                return -1;
             }
             return 10;
         default:

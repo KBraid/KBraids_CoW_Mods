@@ -1,12 +1,5 @@
 var Constructor = function()
 {
-    this.getCOStyles = function()
-    {
-        // string array containing the endings of the alternate co style
-
-        return ["+alt"];
-    };
-
     this.init = function(co, map)
     {
         co.setPowerStars(3);
@@ -151,27 +144,17 @@ var Constructor = function()
         case GameEnums.PowerMode_Superpower:
             if (attacker.getUnitType() === GameEnums.UnitType_Infantry)
             {
-                return 90;
+                return 80;
             }
-            else if (attacker.getBaseMaxRange() === 1)
-            {
-                return 0;
-            }
-            return 10;
         case GameEnums.PowerMode_Power:
             if (attacker.getUnitType() === GameEnums.UnitType_Infantry)
             {
-                return 60;
+                return 50;
             }
-            else if (attacker.getBaseMaxRange() === 1)
-            {
-                return 0;
-            }
-            return 10;
         default:
             if (attacker.getUnitType() === GameEnums.UnitType_Infantry)
             {
-                return 20;
+                return 30;
             }
             break;
         }
@@ -213,6 +196,10 @@ var Constructor = function()
 
     this.getMovementpointModifier = function(co, unit, posX, posY, map)
     {
+        if (unit.isTransporter())
+        {
+            return 1;
+        }
         if (unit.getUnitType() === GameEnums.UnitType_Infantry)
         {
             switch (co.getPowerMode())
@@ -279,11 +266,11 @@ var Constructor = function()
     this.getLongCODescription = function()
     {
         return qsTr("\nSpecial Unit:\nCommando\n") +
-        qsTr("\nGlobal Effect: \nSami's foot soldier units have 120% firepower and capture at 1.5 times the normal rate. Her other direct-combat units deal 90% damage.");
+        qsTr("\nGlobal Effect: \nSami's foot soldier units have 130% firepower and capture at 1.5 times the normal rate. Her transport units have one extra movement space. Her other direct-combat units deal 90% damage.");
     };
     this.getPowerDescription = function(co)
     {
-        return qsTr("Sami's foot soldiers gain 1 movement and their firepower becomes 160%. (Standard +10% firepower and defense.)");
+        return qsTr("Sami's foot soldiers gain 1 movement and their firepower becomes 150%. (Standard +10% defense.");
     };
     this.getPowerName = function(co)
     {
@@ -291,7 +278,7 @@ var Constructor = function()
     };
     this.getSuperPowerDescription = function(co)
     {
-        return qsTr("Sami's foot soldiers gain 2 movement, increase their capture rate to 2000%, and their firepower becomes 190%. (Standard +10% firepower and defense.)");
+        return qsTr("Sami's foot soldiers gain 2 movement, increase their capture rate to 2000%, and their firepower becomes 180%. (Standard +10% defense.)");
     };
     this.getSuperPowerName = function(co)
     {
@@ -319,9 +306,9 @@ var Constructor = function()
     };
     this.getName = function()
     {
-        return qsTr("Sami (AWDS)");
+        return qsTr("Sami (AW2)");
     };
 }
 
 Constructor.prototype = CO;
-var CO_SAMI = new Constructor();
+var CO_SAMI_AW2 = new Constructor();

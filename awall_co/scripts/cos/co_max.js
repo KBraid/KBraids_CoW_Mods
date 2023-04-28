@@ -247,7 +247,7 @@ var Constructor = function()
     };
     this.getName = function()
     {
-        return qsTr("Max");
+        return qsTr("Max (AWDS)");
     };
 }
 
