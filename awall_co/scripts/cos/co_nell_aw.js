@@ -7,8 +7,7 @@ var Constructor = function()
 
     this.init = function(co, map)
     {
-        co.setPowerStars(3);
-        co.setSuperpowerStars(3);
+        co.setPowerStars(6);
     };
 
     this.loadCOMusic = function(co, map)
@@ -18,9 +17,6 @@ var Constructor = function()
         {
         case GameEnums.PowerMode_Power:
             audio.addMusic("resources/music/cos/power.mp3", 992, 45321);
-            break;
-        case GameEnums.PowerMode_Superpower:
-            audio.addMusic("resources/music/cos/superpower.mp3", 1505, 49515);
             break;
         case GameEnums.PowerMode_Tagpower:
             audio.addMusic("resources/music/cos/tagpower.mp3", 14611, 65538);
@@ -78,53 +74,6 @@ var Constructor = function()
         }
     };
 
-    this.activateSuperpower = function(co, powerMode, map)
-    {
-        var dialogAnimation = co.createPowerSentence();
-        var powerNameAnimation = co.createPowerScreen(powerMode);
-        powerNameAnimation.queueAnimationBefore(dialogAnimation);
-
-        var units = co.getOwner().getUnits();
-        var animations = [];
-        var counter = 0;
-        units.randomize();
-        for (var i = 0; i < units.size(); i++)
-        {
-            var unit = units.at(i);
-            var animation = GameAnimationFactory.createAnimation(map, unit.getX(), unit.getY());
-            var delay = globals.randInt(135, 265);
-            if (animations.length < 7)
-            {
-                delay *= i;
-            }
-            if (i % 2 === 0)
-            {
-                animation.setSound("power12_1.wav", 1, delay);
-            }
-            else
-            {
-                animation.setSound("power12_2.wav", 1, delay);
-            }
-            if (animations.length < 7)
-            {
-                animation.addSprite("power12", -map.getImageSize() * 2, -map.getImageSize() * 2, 0, 2, delay);
-                powerNameAnimation.queueAnimation(animation);
-                animations.push(animation);
-            }
-            else
-            {
-                animation.addSprite("power12", -map.getImageSize() * 2, -map.getImageSize() * 2, 0, 2, delay);
-                animations[counter].queueAnimation(animation);
-                animations[counter] = animation;
-                counter++;
-                if (counter >= animations.length)
-                {
-                    counter = 0;
-                }
-            }
-        }
-    };
-
     this.getCOUnitRange = function(co, map)
     {
         return -2;
@@ -138,8 +87,6 @@ var Constructor = function()
         switch (co.getPowerMode())
         {
         case GameEnums.PowerMode_Tagpower:
-        case GameEnums.PowerMode_Superpower:
-            return 100;
         case GameEnums.PowerMode_Power:
             return 60;
         default:
@@ -156,7 +103,6 @@ var Constructor = function()
         switch (co.getPowerMode())
         {
         case GameEnums.PowerMode_Tagpower:
-        case GameEnums.PowerMode_Superpower:
         case GameEnums.PowerMode_Power:
             {
                 return 10;
@@ -171,7 +117,6 @@ var Constructor = function()
         switch (co.getPowerMode())
         {
         case GameEnums.PowerMode_Tagpower:
-        case GameEnums.PowerMode_Superpower:
         case GameEnums.PowerMode_Power:
             {
                 return 10;
@@ -206,19 +151,11 @@ var Constructor = function()
     };
     this.getPowerDescription = function(co)
     {
-        return qsTr("Nell's luck damage increases up to +60%. (Standard +10% firepower and defense.)");
+        return qsTr("Nell's luck damage increases up to +60%. 110% damage dealt and 90% damage received by all units.");
     };
     this.getPowerName = function(co)
     {
         return qsTr("Lucky Star");
-    };
-    this.getSuperPowerDescription = function(co)
-    {
-        return qsTr("Nell's luck damage increases up to +100%. (Standard +10% firepower and defense.)");
-    };
-    this.getSuperPowerName = function(co)
-    {
-        return qsTr("Lady Luck");
     };
     this.getPowerSentences = function(co)
     {
@@ -242,9 +179,9 @@ var Constructor = function()
     };
     this.getName = function()
     {
-        return qsTr("Nell (AWDS)");
+        return qsTr("Nell (AW)");
     };
 }
 
 Constructor.prototype = CO;
-var CO_NELL = new Constructor();
+var CO_NELL_AW = new Constructor();

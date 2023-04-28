@@ -1,10 +1,5 @@
 var Constructor = function()
 {
-    this.getCOStyles = function()
-    {
-        return ["+alt"];
-    };
-
     this.init = function(co, map)
     {
         co.setPowerStars(3);
@@ -150,21 +145,6 @@ var Constructor = function()
             break;
         }
     };
-    this.getOffensiveBonus = function(co, attacker, atkPosX, atkPosY,
-      defender, defPosX, defPosY, isDefender, action, luckmode, map)
-    {
-        switch (co.getPowerMode())
-        {
-        case GameEnums.PowerMode_Tagpower:
-        case GameEnums.PowerMode_Superpower:
-        case GameEnums.PowerMode_Power:
-            {
-                return 10;
-            }
-        }
-        return 0;
-    };
-
     this.getDeffensiveBonus = function(co, attacker, atkPosX, atkPosY,
      defender, defPosX, defPosY, isAttacker, action, luckmode, map)
     {
@@ -206,7 +186,7 @@ var Constructor = function()
     };
     this.getPowerDescription = function(co)
     {
-        return qsTr("Nell's luck damage increases up to +60%. (Standard +10% firepower and defense.)");
+        return qsTr("Nell's luck damage increases up to +60%. (Standard +10% defense.)");
     };
     this.getPowerName = function(co)
     {
@@ -214,7 +194,7 @@ var Constructor = function()
     };
     this.getSuperPowerDescription = function(co)
     {
-        return qsTr("Nell's luck damage increases up to +100%. (Standard +10% firepower and defense.)");
+        return qsTr("Nell's luck damage increases up to +100%. (Standard +10% defense.)");
     };
     this.getSuperPowerName = function(co)
     {
@@ -242,7 +222,7 @@ var Constructor = function()
     };
     this.getName = function()
     {
-        return qsTr("Nell (AWDS)");
+        return qsTr("Nell (AW2)");
     };
 }
 
