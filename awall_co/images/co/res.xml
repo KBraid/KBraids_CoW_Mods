@@ -7,14 +7,23 @@
         <image file="os/co_andy_aw+nrm.png" />
         <image file="os/co_andy_aw+info.png" />
         <image file="os/co_andy_aw+mini.png" />
-        <image file="os/co_andy_aw+face.png" cols = "3" rows = "2" />        
+        <image file="os/co_andy_aw+face.png" cols = "3" rows = "2" />
         <image file="os/co_andy_aw2+nrm.png"/>
         <image file="os/co_andy_aw2+info.png" />
         <image file="os/co_andy_aw2+mini.png" />
         <image file="os/co_andy_aw2+face.png" cols = "3"/>
+        <image file="os/co_max_aw+nrm.png" />
+        <image file="os/co_max_aw+info.png" />
+        <image file="os/co_max_aw+mini.png" />
+        <image file="os/co_max_aw+face.png" cols = "3" rows = "2" />
+        <image file="os/co_max_aw2+nrm.png"/>
+        <image file="os/co_max_aw2+info.png" />
+        <image file="os/co_max_aw2+mini.png" />
+        <image file="os/co_max_aw2+face.png" cols = "3"/>
+
         <image file="bh/co_andy_clone+nrm.png" />
         <image file="bh/co_andy_clone+info.png" />
         <image file="bh/co_andy_clone+mini.png" />
-        <image file="bh/co_andy_clone+face.png" cols = "3" rows = "2" />        
+        <image file="bh/co_andy_clone+face.png" cols = "3" rows = "2" />
     </atlas>
 </resources>
