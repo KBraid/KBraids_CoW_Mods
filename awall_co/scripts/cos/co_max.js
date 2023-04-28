@@ -161,6 +161,10 @@ var Constructor = function()
             }
             return 10;
         }
+        if (attacker.getBaseMaxRange() === 1)
+        {
+            return 20;
+        }
         return 0;
     };
     this.getDeffensiveBonus = function(co, attacker, atkPosX, atkPosY,
